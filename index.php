@@ -10,6 +10,10 @@ require('functions.php');
 $clients = getClients();
 ?>
 <h1>All Clients</h1>
+<form action="search.php" method="get">
+search <input type="text" name="keyword">
+    <button type="submit">Search</button>
+</form>
 <table border="1">
     <thead>
         <th>id</th>
