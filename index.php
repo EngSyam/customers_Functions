@@ -5,10 +5,15 @@
  * Date: 12/24/2019
  * Time: 01:56 ص
  */
-require('config.php');
-require('functions.php');
+session_start();
+require('includes/config.php');
+require('includes/client_Functions.php');
+require('includes/users_functions.php');
+if(!checkLogin())
+    header('LOCATION:login.php');
 $clients = getClients();
 ?>
+welcome <?php echo $_SESSION['username'];?>|<a href="logout.php">logout</a><hr>
 <h1>All Clients</h1>
 <form action="search.php" method="get">
 search <input type="text" name="keyword">
